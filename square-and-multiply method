@@ -1,0 +1,29 @@
+#提供使用者輸入a、x、n值，其中x可以以二進制依序輸入
+a = int(input("a : "))
+x = input("x(binary) : ")
+n = int(input("n : "))
+
+#將每個數字轉換成int
+x = [int(bit) for bit in x]
+
+#將x的順序反轉
+x.reverse()
+
+y = 1
+print("i              xi             multiplcation  square")
+print("===================================================")
+
+#計算
+xi = 0
+for i in range(len(x)):
+    xi = 0
+    if x[i] == 1:
+        y = y * a % n
+        xi = 1
+    a = a * a % n
+    if xi == 1:
+        print(f"{i:<15}{x[i]:<15}{y:<15}{a:<15}")
+    else:
+        print(f"{i:<15}{x[i]:<15}{' ':<15}{a:<15}")
+
+
